@@ -5,22 +5,61 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CorrectTextWpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="400" Width="600">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="4*"/>
-            <RowDefinition Height="4*"/>
-            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="8*"/>            
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <ScrollViewer HorizontalScrollBarVisibility="Auto" >
-            <TextBlock Grid.Row="0" HorizontalAlignment="Stretch" TextWrapping="Wrap"
-                   VerticalAlignment="Stretch" Name="CorrectText" Text="gdg12" FontSize="24" 
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>                
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="12*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" Text="Input text:" FontSize="20"/>
+            <TextBlock Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" Text="Result:" FontSize="20"/>
+            <ScrollViewer Grid.Row="2" Grid.Column="3" HorizontalScrollBarVisibility="Auto" >
+                <TextBox Grid.Row="2" Grid.Column="3" HorizontalAlignment="Stretch" TextWrapping="Wrap"
+                   VerticalAlignment="Stretch" Name="CorrectText" Text="" FontSize="24" 
                    FontFamily="Courier New" />
-        </ScrollViewer>
-        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto" >
-            <TextBox Name="InputText" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextWrapping="Wrap" FontSize="24" FontFamily="Times New Roman"/>
-        </ScrollViewer >
-        <Button Grid.Row="2" Name="ok" Content="OK" FontSize="20" Click="ok_Click" />
+            </ScrollViewer>
+            <ScrollViewer Grid.Row="0" Grid.Column="3" HorizontalScrollBarVisibility="Auto" >
+                <TextBox Name="InputText" Grid.Row="0" Grid.Column="3"  HorizontalAlignment="Stretch"
+                         VerticalAlignment="Stretch" TextWrapping="Wrap" FontSize="24"
+                         FontFamily="Times New Roman"/>
+            </ScrollViewer >
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="12*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch" Text="Width of line" FontSize="17"/>
+            <TextBox Name="Width" Grid.Row="0" Grid.Column="3"  HorizontalAlignment="Stretch"
+                         VerticalAlignment="Stretch" TextWrapping="Wrap" FontSize="24"
+                         FontFamily="Times New Roman"/>
+            <Button Grid.Row="2" Grid.Column="3" Name="ok" Content="OK" FontSize="20" Click="ok_Click" />
+        </Grid>
+        
 
     </Grid>
 </Window>

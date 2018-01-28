@@ -27,10 +27,16 @@ namespace CorrectTextWpf
 
         private void ok_Click(object sender, RoutedEventArgs e)
         {
-            string text = InputText.Text;
-            CorrectText.Text=TextFormatter.Justify(text, 3);
-            InputText.FontFamily = new FontFamily("Courier New");
-            InputText.Text = TextFormatter.Justify(text, 30);
+            try
+            {
+                string text = InputText.Text;
+                int width = Int32.Parse(Width.Text);
+                CorrectText.Text = TextFormatter.Justify(text, width);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
