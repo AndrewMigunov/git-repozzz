@@ -1,0 +1,26 @@
+﻿<Window x:Class="CorrectTextWpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CorrectTextWpf"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" >
+            <TextBlock Grid.Row="0" HorizontalAlignment="Stretch" TextWrapping="Wrap"
+                   VerticalAlignment="Stretch" Name="CorrectText" Text="gdg12" FontSize="24" 
+                   FontFamily="Courier New" />
+        </ScrollViewer>
+        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto" >
+            <TextBox Name="InputText" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextWrapping="Wrap" FontSize="24" FontFamily="Times New Roman"/>
+        </ScrollViewer >
+        <Button Grid.Row="2" Name="ok" Content="OK" FontSize="20" Click="ok_Click" />
+
+    </Grid>
+</Window>
